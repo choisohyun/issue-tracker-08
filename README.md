@@ -15,8 +15,6 @@
 
 - 팀원: [Ever](https://github.com/hsik0225), [Jay](https://github.com/beginin15)
 
-![이슈트래커 기능 001](https://user-images.githubusercontent.com/30427711/90753957-3538fe00-e314-11ea-8159-fb25d7a058af.jpeg)
-
 ## Index
 
 > 프론트 엔드 작업을 중점적으로 설명합니다.
