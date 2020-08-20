@@ -1,78 +1,129 @@
-<h1 align="center">
-이슈트래커 8팀
+# <p align="center">이슈트래커 서비스</p>
 
-![GitHub stars](https://img.shields.io/github/stars/codesquad-member-2020/issue-tracker-08?style=social)
+> 이슈를 마일스톤과 라벨을 통해 보다 유용하게 관리하는 웹 서비스  
+> 기간: 2020.06.08 ~ 2020.07.17
 
-![GitHub language count](https://img.shields.io/github/languages/count/codesquad-member-2020/issue-tracker-08) ![GitHub pull requests](https://img.shields.io/github/issues-pr/codesquad-member-2020/issue-tracker-08?color=green) ![GitHub issues](https://img.shields.io/github/issues/codesquad-member-2020/issue-tracker-08)  
-![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/codesquad-member-2020/issue-tracker-08/1) ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/codesquad-member-2020/issue-tracker-08/3)
+### Service Page
 
-</h1>
+- <a href="http://54.180.77.46/" target="_blank">링크(클릭)</a>
 
-### BE
+#### Front-end
 
-![GitHub issues by-label](https://img.shields.io/github/issues/codesquad-member-2020/issue-tracker-08/BE) ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/codesquad-member-2020/issue-tracker-08/BE?color=green)
+- 팀원: [Hoo](https://github.com/choisohyun), [Sally](https://github.com/sally4405)
 
-### FE
+#### Back-end
 
-![GitHub issues by-label](https://img.shields.io/github/issues/codesquad-member-2020/issue-tracker-08/FE) ![GitHub pull requests by-label](https://img.shields.io/github/issues-pr/codesquad-member-2020/issue-tracker-08/FE?color=green)
+- 팀원: [Ever](https://github.com/hsik0225), [Jay](https://github.com/beginin15)
 
-## 팀원
+![이슈트래커 기능 001](https://user-images.githubusercontent.com/30427711/90753957-3538fe00-e314-11ea-8159-fb25d7a058af.jpeg)
 
-| 클래스    | 이름                                                                        |
-| --------- | --------------------------------------------------------------------------- |
-| Back-end  | [Ever](https://github.com/hsik0225), [Jay](https://github.com/beginin15)    |
-| Front-end | [Hoo](https://github.com/choisohyun), [Sally](https://github.com/sally4405) |
+## Index
 
-## 요구사항 기술서
+> 프론트 엔드 작업을 중점적으로 설명합니다.
 
-- [요구사항 기술서 링크](https://docs.google.com/spreadsheets/d/10mveFGENA-cXjG4W2_tIxAPWbGiFuZin8paTWh7H52w/edit#gid=0)
+1. [기능](#1-기능)
+2. [설계 및 구현](#2-설계-및-구현)
+3. [협업 방식](#3-협업-방식)
+4. [학습 내용](#4-학습-내용)
 
-## Ground Rule
+### 1. 기능
 
-### 컨벤션
+- 회원 인증 기능
+- 이슈 CRUD
+- 이슈 필터 기능
+- 라벨 CRUD
+- 마일스톤 CRUD
 
-- [Git - 커밋 메시지 컨벤션](https://doublesprogramming.tistory.com/256)을 따른다.
-- 커밋에 이슈 번호를 붙인다.
-  `[이슈 번호] 커밋 타입: 커밋 제목`
-  `[#3] feat: 안녕하세요.`
-- 커밋 타입은 `[#3] feat:` 형식을 유지한다.
+![이슈트래커 기능 001](https://user-images.githubusercontent.com/30427711/90753957-3538fe00-e314-11ea-8159-fb25d7a058af.jpeg)
 
-### 프로젝트 관리
+<img width="859" alt="Screen Shot 2020-08-20 at 22 42 01" src="https://user-images.githubusercontent.com/30427711/90777451-675b5780-e336-11ea-8f3b-33dca6c5d56f.png">
 
-- 각 클래스별 저장소 폴더를 만들어서 관리한다.
-- Milestone으로 주마다 해야 할 일을 나눠 관리한다.
+### 2. 설계 및 구현
 
-### 브랜치 관리
+#### ① Webpack 설정하기
 
-- `master`: 최종 릴리즈되는 마스터
-- `dev`: 각 클래스 별 기능 완료 시 PR보내는 브랜치, default 브랜치로 설정
-- `feature_{class}/{feature}`: 기능 단위로 브랜치 클래스 분류해서 설정
+- 주요 구성
 
-> 기능 단위 브랜치는 `dev`로 머지 후에 삭제한다.
+```text
+react, webpack, babel,
+react-router, react-redux,
+styled-component, material ui,
+dotenv
+```
 
-- `master`, `dev` 는 배포를 위해서 동작하는 상태의 산출물이 있다.
+- 관련 포스팅: [[React] 환경설정 제대로 알고 하기 (without CRA)](https://egg-programmer.tistory.com/259)
 
-### 이슈 관리
+#### ② 컴포넌트 구조 설계
 
-`[클래스명] 이슈 제목`
+- `views`: 라우터로 구분되는 페이지들
+- `components`: 재사용 컴포넌트
+- `style`: 재사용 스타일(Text, Button, ...)
+- `hooks`: 리액트 함수 컴포넌트 안에서 사용하는 재사용 함수들
+- `modules`: 리덕스 액션 객체들
+- `lib`: 각종 재사용 일반 함수들
 
-- issue에 구현할 내용 정리한다.
-- 구현 후 commit할 때 closed 처리한다.
-- `Auto Close`를 사용할 필요가 있는 경우 PR이나 Commit Message에 `Close Keyword`를 적어서 Issue Close가 가능합니다.
+```text
+.
+├── App.jsx
+├── lib
+├── components
+│   ├── CommentViewBox
+│   ├── FilterButton
+│   ├── InputBox
+│   └── NavigationButton
+├── hooks
+├── index.jsx
+├── modules
+├── style
+└── views
+    ├── CreateIssuePage
+    ├── CreateMilestonePage
+    ├── IssueDetailPage
+    ├── IssueListPage
+    ├── LabelListPage
+    ├── LoginPage
+    ├── MilestonePage
+    └── SignupPage
+```
 
-### Pull Request 관리
+### 3. 협업 방식
 
-`[클래스명] PR 제목`
+#### ① Ground Rule 설정
 
-- 이슈 번호 사용은 자유롭게 한다.
+- Commit Message 컨벤션 지정
+- branch, directory, branch, issue 규칙 지정
+- 스크럼, 회고 일정 시간에 진행
+- 페어와는 이슈로 컨벤션 의논을 통해 컨벤션 지정
 
-### 스크럼
+<img width="805" alt="Screen Shot 2020-08-20 at 23 52 05" src="https://user-images.githubusercontent.com/30427711/90787876-28ca9a80-e340-11ea-9ec7-9f4df2e45f2f.png">
 
-- 방식: 이슈에 그 날 날짜로 생성하고 댓글로 달기. 마지막에 단 사람이 닫기.
-- 공유하는 내용: 어제 한 일, 오늘 할 일, 오늘 컨디션
+#### ② 페어와의 상호 리뷰 진행
 
-### 회고
+- 분담작업을 할 때 상호 리뷰를 진행하여 의견을 나누고 다르게 생각하는 부분을 절충함.
 
-- 시간: 매일 5시
-- 방식: 구두로만 진행
-- 공유하는 내용: 스크럼에서 계획했던 할 일을 얼마나 했는지
+<img width="880" alt="iShot2020-08-2018 31 02" src="https://user-images.githubusercontent.com/30427711/90789452-e86c1c00-e341-11ea-92ee-f2033532ffe5.png">
+
+#### ③ 위키를 활용하여 주간 계획/회고 진행
+
+- [위키 링크](https://github.com/codesquad-member-2020/issue-tracker-08/wiki)
+
+<img width="200" alt="Screen Shot 2020-08-21 at 0 14 18" src="https://user-images.githubusercontent.com/30427711/90790643-43524300-e343-11ea-9a7a-e9c2a5b7cefd.png">
+
+- n주차 계획과 회고를 진행하며 부족했던 점과 컨디션에 대해 돌아볼 수 있었다.
+- 계획했던 내용을 왜 실행하지 않았는지에 대한 이유도 기록하여 명확하게 할 수 있도록 했다.
+  - [로컬스토리지 미사용](<https://github.com/codesquad-member-2020/issue-tracker-08/wiki/%5BFE%5D-5%EC%A3%BC%EC%B0%A8-%EC%A7%84%ED%96%89-%EA%B2%B0%EA%B3%BC-(%EC%BD%94%EB%A9%98%ED%8A%B8,-%EC%9D%B4%EC%8A%88-%EA%B8%B0%EB%8A%A5-%EC%A7%84%ED%96%89)#6-%EB%A1%9C%EC%BB%AC%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EB%AF%B8%EC%82%AC%EC%9A%A9>)
+
+### 4. 학습 내용
+
+#### Webpack 환경 설정 직접 구성
+
+- 📝 [[React] 환경설정 제대로 알고 하기 (without CRA)](https://egg-programmer.tistory.com/259)
+
+#### 재사용 컴포넌트, 재사용 스타일 중점 사용
+
+- 📝 [리액트에 글로벌 스타일 적용하기](https://egg-programmer.tistory.com/226?category=915627)
+- 📝 [스타일 테마 작업](https://github.com/codesquad-member-2020/issue-tracker-08/pull/19)
+
+#### redux thunk
+
+- 📝 [redux-thunk, redux-actions 적용 코드 설명](<https://github.com/codesquad-member-2020/issue-tracker-08/wiki/%5BFE%5D-2%EC%A3%BC%EC%B0%A8-%EC%A7%84%ED%96%89-%EA%B2%B0%EA%B3%BC-(API-%EC%97%B0%EA%B2%B0)>)
