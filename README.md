@@ -1,21 +1,14 @@
 # <p align="center">이슈트래커 서비스</p>
 
 > 이슈를 마일스톤과 라벨을 통해 보다 유용하게 관리하는 웹 서비스  
-> 기간: 2020.06.08 ~ 2020.07.17
+> 기간: 2020.06.08 ~ 2020.07.17  
+> 역할: 프론트 엔드 개발
 
 <img width="1394" alt="Screen Shot 2020-08-21 at 10 22 07" src="https://user-images.githubusercontent.com/30427711/90841678-2c8a0b80-e398-11ea-8311-03cd2d8ffe02.png">
 
 ### Service Page
 
 - <a href="http://54.180.77.46/" target="_blank">링크(클릭)</a>
-
-#### Front-end
-
-- 팀원: [Hoo](https://github.com/choisohyun), [Sally](https://github.com/sally4405)
-
-#### Back-end
-
-- 팀원: [Ever](https://github.com/hsik0225), [Jay](https://github.com/beginin15)
 
 ## Index
 
