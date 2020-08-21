@@ -3,6 +3,8 @@
 > 이슈를 마일스톤과 라벨을 통해 보다 유용하게 관리하는 웹 서비스  
 > 기간: 2020.06.08 ~ 2020.07.17
 
+<img width="1394" alt="Screen Shot 2020-08-21 at 10 22 07" src="https://user-images.githubusercontent.com/30427711/90841678-2c8a0b80-e398-11ea-8311-03cd2d8ffe02.png">
+
 ### Service Page
 
 - <a href="http://54.180.77.46/" target="_blank">링크(클릭)</a>
